@@ -25,6 +25,7 @@ docker run -d \
   -p 3000:3000 \
   --name=${CONTAINER_NAME} \
   -v ~/.aws:/usr/share/grafana/.aws \
+  -v ${PWD}/grafana.ini:/etc/grafana/grafana.ini \
   -v ${SCRIPT_DIR}/local_grafana_data:/var/lib/grafana \
   -e "GF_INSTALL_PLUGINS=cognitedata-datasource" \
   grafana/grafana:8.2.5
